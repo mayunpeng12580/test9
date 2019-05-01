@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.all{
+				width: 500px;
+				height: 150px;
+				background-color: burlywood;
+				display: flex;
+				padding: 30px;
+				box-sizing: border-box;
+			}
+			
+			.img{
+				flex: 1;
+				margin-right: 50px;
+			}
+			
+			.img img{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				border: 1px solid red;
+				z-index: 2;
+				-webkit-animation-name: rto;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-webkit-animation-play-state: paused;
+			}
+			
+			
+			.left{
+				width: 20px;
+				height: 20px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px 0;
+				float: left;
+				
+			}
+			
+			.star{
+				width: 30px;
+				height: 30px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -60px;
+				margin:0  10px 0;
+				float: left;
+				
+				
+			}
+			
+			.stop{
+				width: 30px;
+				height: 30px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -90px;
+				
+				float: left;
+				
+			}
+			
+			.right{
+				width: 20px;
+				height: 20px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -30px;
+				float: left;
+			}
+			
+			.swich{
+				/*display: flex;*/
+				flex: 2;
+				width: 200px;
+				height: 30px;
+				overflow: hidden;
+				margin-top: 30px;
+			}
+			
+			@-webkit-keyframes rto{
+				from{-webkit-transform: rotate(0deg);}
+				to{-webkit-transform: rotate(360deg);}
+			}
+			
+			
+			.progress{
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="img">
+				<img src="img/kuaizixiongdi.jpeg" />
+			</div>
+			<div class="swich">
+				<div class="left"></div>
+				<div class="star"></div>
+				<div class="right"></div>
+			</div>		
+			<div class="progress">
+				<input type="range" value="0" min="0" max="100" />
+				<p>00:00</p>
+			</div>
+			<audio src="media/小苹果.mp3" id="mp3"></audio>
+		</div>
+		
+		<script type="text/javascript">
+			var mp3=document.querySelector("#mp3")
+			var star=document.querySelector(".star")
+			var img=document.querySelector(".img img")
+			var val=document.querySelector(".progress input")
+			var p=document.querySelector(".progress p")
+			
+			star.onclick=function(){
+				if(mp3.paused){
+					mp3.play();
+					star.className="stop";
+					img.style.webkitAnimationPlayState="running";
+				}else{
+					mp3.pause()
+					star.className="star"
+					img.style.webkitAnimationPlayState="paused";
+					
+				}
+			}
+			
+			function pro(){
+				var alltime=mp3.duration;
+				var nowtime=mp3.currentTime
+				val.value=nowtime/alltime*100
+				
+				var min=Math.floor(nowtime/60)
+				var ms=Math.floor(nowtime%60)
+				min=min<10?"0"+min:min
+				ms=ms<10?"0"+ms:ms
+				p.innerText=min+":"+ms+"/02:17"
+			}
+			
+			setInterval(pro,1000)
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

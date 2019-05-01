@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			.end{
+				width: 200px;
+				height: 100px;
+				margin: 20px;
+				border: 1px red solid;
+				overflow: auto;
+			}
+			
+			.top{
+				width: 256px;
+				height: 256px;
+				border: 1px red solid;
+			}
+			
+			.box{
+				position: absolute;
+				left: 300px;
+				top: 200px;
+				border: 1px red solid;
+			}
+			
+			.image2{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<img src="img/trash1.png"  class="image1"/>
+			<img src="img/trash2.jpg"   class="image2"/>
+		</div>
+		
+		
+		<ul class="box" >
+			<li draggable="true">三国演义</li>
+			<li draggable="true">水浒传</li>
+			<li draggable="true">西游记</li>
+			<li draggable="true">红楼梦</li>
+		</ul>
+		
+		<div class="end"></div>
+		
+		<script type="text/javascript">
+			var li=document.querySelectorAll(".box li")
+			var top=document.querySelector(".top")
+			var ul=document.querySelector("ul")
+			var end=document.querySelector(".end")
+			var image1=document.querySelector(".image1")
+			var image2=document.querySelector(".image2")
+			var stp; 
+		for (var i=0;i<li.length;i++) {
+			li[i].ondragstart=function(){
+				stp=this
+				console.log(stp)
+			}
+			
+			li[i].ondragend=function(e){
+				stp=null
+			}
+		}	
+			
+			
+			top.ondragenter=function(){
+			}
+			
+			top.ondragover=function(e){
+				console.log(555)
+				
+				e.preventDefault()
+			}
+			
+			
+			top.ondrop=function(){
+				var p=document.createElement("p")
+				p.innerText=stp.innerText
+				end.appendChild(p)
+				
+				if(end!=null){
+					image1.style.display="none";
+					image2.style.display="block";
+					
+				}
+			}
+		</script>
+		
+	</body>
+</html>
