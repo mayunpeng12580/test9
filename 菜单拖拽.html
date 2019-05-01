@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			html{
+				width: 100%;
+				height: 100%;
+				font-size: calc(100vw/7.5);
+			}
+			
+			body{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.center{
+				width: 100%;
+				height: 100%;
+				padding: 80px 0;
+				background-color: #DEB887;
+				box-sizing: border-box;
+				display: flex;
+			}
+			
+			.header{
+				height: 80px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: brown;
+			}
+			
+			.footer{
+				height: 80px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: brown;
+			}
+			
+			.left{
+				width: 1.6rem;
+				height: 100%;
+				background-color: darkcyan;
+				overflow: hidden;
+				position: relative;.
+			}
+			
+			.right{
+				flex: 2;
+				background-color: darkgoldenrod;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.left dl{
+				width: 100%;
+				/*height: 100%;*/
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.left dl dd{
+				width: 100%;
+				height: 0.8rem;
+				font-size: 0.28rem;
+				text-align: center;
+				line-height: 0.8rem;
+				border-bottom: 1px solid red;
+				color: white;
+			}
+			
+			.tran{
+				-webkit-transition:top 1s linear
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header"></div>
+		<div class="center">
+			<div class="left">
+				<dl>
+					<dd>民营企业</dd>
+					<dd>合伙企业</dd>
+					<dd>民营企业2</dd>
+					<dd>合伙企业</dd>
+					<dd>民营企业3</dd>
+					<dd>合伙企业</dd>
+					<dd>民营企业12</dd>
+					<dd>合伙企业45</dd>
+					<dd>民营企业4444</dd>
+					<dd>合伙企业111</dd>
+					<dd>民营企业121</dd>
+					<dd>合伙企业11</dd>
+					<dd>民营企业22</dd>
+					<dd>合伙企业33</dd>
+					<dd>民营企业44</dd>
+					<dd>合伙企业55</dd>
+					<dd>民营企业66</dd>
+					<dd>合伙企业77</dd>
+					<dd>民营企业88</dd>
+					<dd>合伙企业99</dd>
+				</dl>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div class="footer"></div>
+		
+		<script type="text/javascript">
+			var dl=document.querySelector(".left dl")
+			var left=document.querySelector(".left")
+			var topy=left.offsetHeight-dl.offsetHeight-150
+			var topY=0;
+			var starY=0;
+			left.ontouchstart=function(e){
+				starY=e.changedTouches[0].clientY
+
+			}
+			
+			left.ontouchmove=function(e){
+				var endY=e.changedTouches[0].clientY
+				var tmp=topY+endY-starY
+				tmp=tmp>150?150:tmp;
+				tmp=tmp<topy?topy:tmp;
+				dl.style.top=tmp+"px"
+				
+			}
+			
+			left.ontouchend=function(e){
+				var endY=e.changedTouches[0].clientY
+				var tmp=topY+endY-starY
+				tmp=tmp>0?0:tmp
+				tmp=tmp<(topy+150)?(topy+150):tmp
+				topY=tmp
+				
+				dl.style.top=topY+"px"
+				dl.className = "tran";
+			}
+			
+			
+		</script>
+	</body>
+</html>
