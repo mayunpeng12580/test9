@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 400px;
+				height: 400px;
+				border: 1px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas class="box" width="400" height="400"></canvas>
+		
+		<script type="text/javascript">
+			var txt=document.querySelector(".box");
+			var ctx=txt.getContext("2d");
+			
+			
+		function bgd(){
+			ctx.beginPath();
+			ctx.arc(200,200,200,0,2*Math.PI);
+			ctx.stroke();
+			ctx.closePath();
+			for (var i=0;i<60;i++){
+				var x=200-190*Math.cos(Math.PI/180*6*i)
+				var y=200-190*Math.sin(Math.PI/180*6*i)
+				
+				
+				if(i%5!=0){
+					for (var j=0;j<12;j++) {
+					ctx.beginPath();
+					ctx.arc(x,y,5,0,2*Math.PI);
+					ctx.fillStyle="blue";
+					ctx.fill()
+					ctx.closePath()
+					}
+					
+				}else{
+					var a=(i/5+9)%12
+					ctx.beginPath();
+					ctx.font="20px '黑体'";
+					ctx.textAlign="center";
+					ctx.textBaseline="middle";
+					ctx.fillText(a==0?12:a,x,y);
+					ctx.closePath();
+			}
+			}
+		}
+			bgd();
+			
+			
+			function ms(){
+				ctx.save()
+				var time=new Date()
+				var ms=time.getSeconds()
+				ctx.clearRect(0,0,400,400);
+				ctx.lineCap="round"
+				
+				bgd()
+				ctx.translate(200,200)
+				ctx.beginPath()
+				ctx.rotate(Math.PI/180*6*ms)
+				ctx.lineWidth=4
+				ctx.strokeStyle="coral"
+				ctx.lineTo(0,-150);
+				ctx.lineTo(0,50)
+				ctx.stroke()
+				ctx.beginPath();
+				ctx.arc(0,-120,8,0,2*Math.PI)
+				ctx.stroke()
+				ctx.restore()
+				ctx.beginPath()
+				ctx.arc(200,200,10,0,2*Math.PI)
+				ctx.fillStyle="blueviolet"
+				ctx.fill()
+
+				
+			}
+			
+				
+			function min(){
+				
+				
+				ctx.save()
+				var time=new Date()
+				var min=time.getMinutes()
+				ctx.clearRect(0,0,400,400);
+				ctx.lineCap="round"
+
+				bgd()
+				ctx.translate(200,200)
+				ctx.beginPath()
+				ctx.rotate(Math.PI/180*6*min)
+				ctx.lineWidth=4
+				ctx.strokeStyle="darkblue"
+				ctx.lineTo(0,-110);
+				ctx.lineTo(0,30)
+				ctx.stroke()
+				ctx.restore()
+				ctx.beginPath()
+				ctx.arc(200,200,10,0,2*Math.PI)
+				ctx.fillStyle="blueviolet"
+				ctx.fill()
+
+				
+			}
+			
+			setInterval(min,0);
+			setInterval(ms,0)
+			
+		</script>
+	</body>
+</html>
