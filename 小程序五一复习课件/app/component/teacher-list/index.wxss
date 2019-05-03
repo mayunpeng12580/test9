@@ -1,0 +1,55 @@
+.teacher-list{
+  width: 100%;
+  margin-top: 10rpx
+}
+
+.teacher-list::after{
+  content: "";
+  display: block;
+  clear: both
+}
+
+.teacher-list .teacher{
+  width: 48%;
+  margin: 0 1%;
+  float: left;
+  text-align: center
+  
+}
+
+
+
+.teacher-list .teacher image{
+  width: 300rpx;
+  height:300rpx; 
+  border-radius: 50%
+}
+
+.teacher-list .teacher .title, .teacher-list .teacher .students{
+  height: 60rpx;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  text-align: left;
+  padding-left: 10rpx
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  margin: 10rpx
+}
+
+.header .left, .header .right{
+  flex: 1;
+  text-align: left;
+  color: #333333;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx
+}
+
+.header .right{
+  text-align: right
+}

@@ -1,0 +1,28 @@
+
+<!-- 顶部 -->
+<top-bar />
+<!-- 轮播图 -->
+<swiper
+  indicator-dots="{{true}}"
+  autoplay="{{true}}"
+  interval="{{3000}}"
+  duration="{{500}}"
+  indicator-color="black"
+  indicator-active-color="red"
+  circular=true
+>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="375" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 小图标导航 -->
+<nav items="{{navimg}}" />
+<course-list imglist="{{course}}" />
+<teacher-list teacherlist="{{teacher}}" />
+
+<!-- <view style='height:1000px'></view> -->
+<!-- 底部 -->
+<import src="/templates/footer.wxml" />
+<template is="footer"  />

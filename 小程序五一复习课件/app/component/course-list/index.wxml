@@ -1,0 +1,13 @@
+<view class="course-list">
+  <view class='coursenav'>
+    <view class='left'>推荐课程</view>
+    <view class='right'>更多</view>
+  </view>
+  <dl wx:for="{{imglist}}" wx:key="{{index}}">
+   
+    <dt><image src='{{item.image}}'></image></dt>
+    <dd>{{item.title}}</dd>
+    <dd>{{item.price}}</dd>
+  </dl>
+
+</view>

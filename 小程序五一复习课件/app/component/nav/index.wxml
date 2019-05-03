@@ -1,0 +1,6 @@
+<view class="nav">
+    <dl wx:for="{{items}}" wx:key="{{index}}">
+      <dt><image src="{{item.image}}"></image></dt>
+      <dd>{{item.title}}</dd>
+   </dl>
+</view>

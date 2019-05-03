@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "top-bar": "/component/top-bar/index",
+    "nav": "/component/nav/index",
+    "course-list":"/component/course-list/index",
+    "teacher-list":"/component/teacher-list/index"
+  },
+
+  "navigationBarTitleText": "首页"
+}

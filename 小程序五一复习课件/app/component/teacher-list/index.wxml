@@ -1,0 +1,12 @@
+<view class="teacher-list">
+  <view class='header'>
+    <view class='left'>名师</view>
+    <view class='right'>更多</view>
+  </view>
+  <view class='teacher' wx:for="{{teacherlist}}" wx:key="{{index}}">
+    <view class='img'><image src='{{item.image}}'></image></view>
+    <view class='title'>{{item.title}}</view>
+    <view class='students'>{{item.students}}</view>
+  </view>
+
+</view>
