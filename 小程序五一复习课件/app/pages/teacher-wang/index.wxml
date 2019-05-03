@@ -1,0 +1,41 @@
+<view>
+  <view class='img'><image src='/images/6.jpg'></image></view>
+  <view class='nav'>
+    <view class='leftnav'>详情</view>
+    <view class='middlenav'>|</view>
+    <view class='rightnav'>目录</view>
+  </view>
+  <view class='main'>
+    <view class='text1'>磨具CAD（陈）</view>
+    <view class='text2'>
+      <view class='text2left'>购买人数：222</view>
+      <view class='text2right'>课时数：22</view>
+    </view>
+    <view class='price'>￥4000</view>
+    <view class='text3'>课程有效期：不限天数</view>
+    <view class='text4'>
+      <view><h4>课程介绍</h4></view>
+      <p>磨具CAD</p>
+    </view>
+    <view class='text5'>
+      <view class='text5img'><image src='/images/wang.jpg'></image></view>
+      <view class='text5left'>陈老师</view>
+      <view class='text5center'>开课：44</view>
+      <view class='text5right'>招生：3003</view>
+    </view>
+    <view class='text6'>
+      <view class='text6left'>课程评论</view>
+      <view class='text6right'>查看更多</view>
+    </view>
+  </view>
+  <view class='footernav'>
+    <view class='footernavleft'>收藏</view>
+    <view class='footernavcenter'>评论</view>
+    <view class='footernavright'>
+      <h2>￥4000</h2>
+      <p>购买</p>
+    </view>
+  
+  </view>
+
+</view>
