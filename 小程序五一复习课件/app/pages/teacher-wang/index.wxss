@@ -164,8 +164,10 @@
 .footernav .footernavleft, .footernav .footernavcenter{
   flex: 1;
   color: #666;
-  font-size: 24rpx;
-  text-align: center
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: white
 }
 
 .footernav .footernavright{
@@ -173,4 +175,13 @@
   background-color: #fe5151;
   color: white;
   text-align: center
+}
+
+.footernav .footernavright h2, .footernav .footernavright p{
+  line-height: 50rpx;
+  display: block
+}
+
+.footernav .footernavright p{
+  font-size: 28rpx
 }
