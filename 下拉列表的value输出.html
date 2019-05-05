@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select>
+			<option>张三</option>
+			<option>李四</option>
+			<option>王五</option>
+		</select>
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			var op=document.querySelectorAll("option")
+			var box=document.querySelector(".box")
+			var se=document.querySelector("select")
+			se.onchange=function(){
+					box.innerHTML="您想嫁给"+op[se.selectedIndex].text
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>
