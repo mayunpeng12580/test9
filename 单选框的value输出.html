@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			三星手机:<input type="radio" name="phone" value="三星手机" />
+			<br />
+			华为手机:<input type="radio" name="phone" value="华为手机" />
+			<br />
+			小米手机:<input type="radio" name="phone" value="小米手机" />
+			<br />
+		</form>
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			var all=document.querySelectorAll("input")
+			var box=document.querySelector(".box")
+			
+			for (var i=0;i<all.length;i++) {
+				all[i].onclick=function (){
+						box.innerHTML="您选中的是"+this.value
+					}
+					
+				}
+			
+		</script>
+	</body>
+</html>
