@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>value输出</h1>
+		<form>
+			足球：<input type="checkbox" value="足球" />
+			<br />
+			篮球：<input type="checkbox" value="篮球" />
+			<br />
+			羽毛球：<input type="checkbox" value="羽毛球" />
+		</form>
+			<button id="tijiao">提交</button>
+			<div class="box"></div>
+		
+		<script type="text/javascript">
+			var all=document.querySelectorAll("input")
+			var ti=document.querySelector("#tijiao")
+			var box=document.querySelector(".box")
+			ti.onclick=function(){
+				box.innerHTML=null
+				for (var i=0;i<all.length;i++) {
+					if (all[i].checked) {
+						box.innerHTML+=all[i].value
+						
+					} 
+				}
+				document.write("您选中的是"+box.innerHTML)
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
