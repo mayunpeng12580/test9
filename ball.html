@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box{
+				width: 400px;
+				height: 350px;
+				border: 2px red solid;
+				position: relative;
+				overflow: hidden;
+				margin: 50px auto ;
+			}
+			
+			.bubble{
+				width: 30px;
+				height: 30px;
+				background-image: url(img/blue.png);
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-size: contain;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--<div class="bubble"></div>-->
+		</div>
+		
+		<script type="text/javascript">
+			var ball=[];
+			var n=20;
+			var box=document.querySelector(".box");
+			
+			function bubble(){
+				
+				//宽高半径
+				this.w=20+Math.random()*30;
+				this.h=this.w;
+				this.r=this.w/2
+				
+				//位置
+				this.top=(350-this.h)*Math.random();
+				this.left=(400-this.w)*Math.random();
+				
+				//圆心位置
+				this.topo=this.a+this.r;
+				this.lefto=this.left+this.r;
+				
+				//运动的方向
+				this.f=Math.PI*2*Math.random();
+				
+				//运动的速度
+				this.v=1+Math.random()*9;
+				
+				//div
+				this.div=document.createElement("div")
+				
+				this.init=function(){
+					this.div.className="bubble";
+					this.div.style.width=this.w+"px";
+					this.div.style.height=this.h+"px";
+					this.div.style.top=this.top+"px";
+					this.div.style.left=this.left+"px";
+					
+					box.appendChild(this.div)
+				}
+				
+				this.move=function(){
+					var y=this.top+this.v*Math.sin(this.f);
+					var x=this.left+this.v*Math.cos(this.f);
+//					console.log(y);
+					this.setPosition(x,y);
+				}
+				
+				this.setPosition=function(x1,y1){
+					
+					
+					
+					
+//					console.log(this.top)
+					x1=x1<(this.w*-1)?400:x1;
+					x1=x1>400?(this.w*-1):x1;
+					
+					
+					y1=y1<(this.h*-1)?350:y1;
+					y1=y1>350?(this.h*-1):y1;
+					
+					this.top=y1;
+					this.left=x1;
+					
+					this.topo=y1 + this.r;
+					this.lefto=x1 + this.r;
+					
+					this.div.style.top=this.top+"px";
+					this.div.style.left=this.left+"px";
+				}
+				
+				this.check=function(){
+					for (var i=0;i<ball.length;i++) {
+						if(ball[i]!=this){
+							var l=Math.pow(ball[i].lefto-this.lefto,2)+Math.pow(ball[i].topo-this.topo,2);
+							if(l<=(Math.pow(ball[i].r+this.r,2))){
+								return ball[i];
+							}
+						}
+					}
+					return null;
+				}
+				
+			}
+			
+			
+			
+			
+			for (var i=0;i<n;i++) {
+				var b=new bubble();
+				b.init();
+				ball.push(b)
+				
+			}
+			
+			
+			
+			var t=setInterval(function(){
+				for (var i=0;i<ball.length;i++) {
+					ball[i].move();
+					
+					var b=ball[i].check();
+					if (b!=null) {
+						var tmp=b.f;
+						b.f=ball[i].f;
+						ball[i].f = tmp;
+						
+						
+						while(b == ball[i].check()){
+							ball[i].move();
+						}
+					}
+					
+					
+				}
+			},200)
+			
+			
+		</script>
+	</body>
+</html>
