@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<button class="box">添加</button>
+		<input type="text" id="now" value=""/>
+		
+		<script type="text/javascript">
+			var se=document.querySelector("select")
+			var op=document.querySelectorAll("option")
+			var box=document.querySelector(".box")
+			var now=document.querySelector("#now")
+			
+			box.onclick=function(){
+				now.value+=op[se.selectedIndex].text
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>
