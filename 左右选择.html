@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js">
+			
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box,
+			.box2 {
+				width: 100px;
+				height: 200px;
+				margin: 20px;
+			}
+			
+			div{
+				width: 150px;
+				height: 250px;
+				float: left;
+				text-align: center;
+			}
+			
+			button{
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<select class="box" multiple="multiple">
+				<option>选项1</option>
+				<option>选项2</option>
+				<option>选项3</option>
+				<option>选项4</option>
+				<option>选项5</option>
+				<option>选项6</option>
+				<option>选项7</option>
+				<option>选项8</option>
+			</select>
+			<button class="check-left">选中的添加到右边</button>
+			<button class="check-leftall">全部添加到右边</button>
+		</div>
+		<div>
+			<select class="box2" multiple="multiple"></select>
+			<button class="check-right">选中的添加到左边</button>
+			<button class="check-rightall">全部添加到左边</button>
+		</div>
+
+		<script type="text/javascript">
+			$(".check-left").click(function(){
+				$(".box option:selected").appendTo(".box2")
+			})
+			
+			$(".check-leftall").click(function(){
+				$(".box option").appendTo(".box2")
+			})
+			
+			$(".check-right").click(function(){
+				$(".box2 option:selected").appendTo(".box")
+			})
+			
+			$(".check-rightall").click(function(){
+				$(".box2 option").appendTo(".box")
+			})
+		</script>
+			
+
+	</body>
+
+</html>
