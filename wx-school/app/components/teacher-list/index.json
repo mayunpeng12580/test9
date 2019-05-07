@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "rotate-star":"/components/rotate-star/index"
+  }
+}

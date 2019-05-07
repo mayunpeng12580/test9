@@ -1,0 +1,10 @@
+/* app/pages/index/index.wxss */
+
+.gorup-list {
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 80rpx;
+  height: 80rpx;
+  background-color: #fff;
+}

@@ -1,0 +1,3 @@
+<view class="rotate">
+  <text wx:for="{{5}}" wx:key="index" class="{{rotate>index?'active':''}}"></text>
+</view>

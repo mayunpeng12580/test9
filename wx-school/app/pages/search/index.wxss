@@ -1,0 +1,19 @@
+/* app/pages/search/index.wxss */
+
+.course-filter {
+  margin: 10px 0;
+  height: 44px;
+  line-height: 44px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.course-filter text {
+  padding-right: 14px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUdwTMzMzMzMzMzMzMzMzM3NzdLS0svLy6qqqszMzMzMzMzMzGC86tIAAAALdFJOUwDl9UGdJhG9A2jOR0lNjwAAAEdJREFUCNdj8N4NBlsYVkMYuxgCIQxRBmZtEL3JgIFhNoixk4GBgQXEcAAyOKp3797eAGQwJO7eLQaiGVi1NwWAGQyGwkACAKGfIfA79uAMAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-size: 10px auto;
+  background-position: right center;
+}

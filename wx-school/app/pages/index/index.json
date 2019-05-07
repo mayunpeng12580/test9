@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+     "top-bar":"/components/topbar/index",
+     "quick-nav":"/components/quick-nav/index",
+     "course-list":"/components/course-list/index",
+     "teacher-list":"/components/teacher-list/index"
+  }
+}

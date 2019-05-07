@@ -1,0 +1,20 @@
+<view class="list">
+
+
+  <view class="teacher" wx:for="{{teacher}}" wx:key="{{index}}">
+    <view class='content'>
+      <view class='avatar'>
+        <image src='{{item.avatar}}' mode="widthFix"></image>
+      </view>
+      <view class='name'>{{item.name}}</view>
+      <view class='rotate'>
+        <rotate-star rotate="{{3}}" /> </view>
+      <view class='info'>
+        <view class='course'>开课：{{item.course}}课</view>
+        <view class='student'>学员：{{item.student}}人</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

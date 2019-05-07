@@ -1,0 +1,38 @@
+<!-- 顶部 -->
+<top-bar>个人中心</top-bar>
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" circular="{{true}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="300rpx" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<quick-nav items="{{quickNav}}" />
+
+
+
+<view class="gorup-list clear">
+  <view class="title left">推荐课程</view>
+  <view class="more right">更多</view>
+</view>
+
+ <course-list course="{{course}}" />
+
+
+<view class="gorup-list clear">
+  <view class="title left">名师</view>
+  <view class="more right">更多</view>
+</view>
+
+ <teacher-list teacher="{{teacher}}" />
+
+
+<!-- 
+http://www.feifanedu.org//wap
+ -->
+
+
+<!-- 底部 -->
+<import src="/templates/footer.wxml" />
+<template is="footer" />

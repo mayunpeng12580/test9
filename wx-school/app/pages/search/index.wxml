@@ -1,0 +1,73 @@
+<!-- 搜索 -->
+<van-search value="{{ search }}" placeholder="请输入搜索关键词" />
+
+<!-- 分类、过滤 -->
+<view class="course-filter flex">
+
+  <view class='flex-item'>
+    <picker bindchange="sortPickerChange" value="{{sortIndex}}" range="{{sortArr}}">
+      <text>{{sortArr[sortIndex] }}</text>
+    </picker>
+  </view>
+  <view class='flex-item'>
+    <picker bindchange="majorPickerChange" value="{{sortIndex}}" range="{{majorArr}}">
+      <text>{{majorArr[majorIndex] }}</text>
+    </picker>
+  </view>
+  <view class='flex-item'>
+    <picker bindchange="catPickerChange" value="{{catIndex}}" range="{{catArr}}">
+      <text>{{catArr[catIndex] }}</text>
+    </picker>
+  </view>
+
+</view>
+
+<!-- 课程列表组件 -->
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="JS" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+</van-card>
+<view style='width:100%;height:15rpx'></view>
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="DW" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+</van-card>
+<view style='width:100%;height:15rpx'></view>
+
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="H5" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+
+</van-card>
+<view style='width:100%;height:15rpx'></view>
+
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="Web 移动" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+
+</van-card>
+<view style='width:100%;height:15rpx'></view>
+
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="web 框架" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+</van-card>
+<view style='width:100%;height:15rpx'></view>
+
+<van-card tag="录播" price="10.00" origin-price="100.00" desc="描述信息" title="web 框架" thumb="{{ imageURL }}">
+  <view slot="tags">
+    <van-tag plain type="danger">课时：14</van-tag>
+    <van-tag plain type="primary">学生：1000</van-tag>
+  </view>
+  <view style='width:100%;height:15rpx'></view>
+</van-card>

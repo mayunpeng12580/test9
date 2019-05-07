@@ -1,0 +1,47 @@
+.list {
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.course {
+  float: left;
+  width: 50%;
+  margin-bottom: 30rpx;
+  padding-right: 8rpx;
+  box-sizing: border-box;
+}
+
+.list .course:nth-child(2n){
+  padding-right: 0rpx;
+  padding-left: 8rpx;
+}
+
+.course image {
+  width: 100%;
+  height: 190rpx;
+}
+.course-title{
+      height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.course-info{
+  line-height: 36rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.course-info .student-count{
+  float: left;
+}
+.course-info .course-price{
+  float: right;
+  color: #ff3333;
+}

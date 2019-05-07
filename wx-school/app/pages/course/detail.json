@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "top-bar": "/components/topbar/index",
+    "van-tab": "/components/tab/index",
+    "van-tabs": "/components/tabs/index",
+    "van-goods-action": "/components/goods-action/index",
+    "van-goods-action-icon": "/components/goods-action-icon/index",
+    "van-goods-action-button": "/components/goods-action-button/index",
+    "van-collapse": "/components/collapse/index",
+    "van-collapse-item": "/components/collapse-item/index",
+    "van-cell": "/components/cell/index",
+    "van-cell-group": "/components/cell-group/index"
+  }
+}

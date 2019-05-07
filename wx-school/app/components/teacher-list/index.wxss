@@ -1,0 +1,69 @@
+/* components/teacher-list/index.wxss */
+
+.rotate{
+  width: 190rpx;
+}
+
+.list{
+  width: 100%;
+   overflow: hidden;
+
+}
+
+.list .teacher{
+   width: 50%;
+    float: left;
+   text-align: center;
+   margin-top: 15rpx
+
+}
+
+.list .teacher .content{
+   width: 100%;
+}
+
+.list .teacher .content .name{
+  font-size: 32rpx;
+  margin: 10rpx 0;
+  color: #333333
+}
+
+.list .teacher .content .name .info{
+  width: 100%;
+  overflow: hidden
+}
+
+
+.list .teacher .content .info .course,.list .teacher .content .info .student{
+  font-size: 24rpx;
+  color: rgb(98, 116, 64);
+  float: left;
+  margin: 10rpx 20rpx
+}
+
+.list .teacher .content .info .student{
+  float: right;
+  margin-right: 25rpx
+}
+
+
+.list .teacher .content .avatar{
+  width: 80%;
+  border-radius: 50%;
+  text-align: center
+
+}
+
+.list .teacher .content .rotate{
+  width: 80%;
+  margin: 2rpx auto;
+  text-align: center
+}
+
+.list .teacher .content .avatar image{
+  width: 100%;
+  border-radius: 50%;
+  margin-left: 10%;
+  margin-top: 10rpx
+}
+

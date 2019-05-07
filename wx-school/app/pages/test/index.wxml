@@ -1,0 +1,10 @@
+<!-- 
+   select : true的时候可以选择多个日期，false的时候只能选中一个日期，用来查看日程安排
+
+   todos: 日程安排的数组
+
+   bind:change 选中的时候出发的事件，可以知道哪个日期被选中，返回的参数是一个数组
+
+ -->
+
+<calendar  select="{{true}}"  todos="{{todos}}"  bind:change="onChange" />

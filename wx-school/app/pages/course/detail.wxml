@@ -1,0 +1,80 @@
+<top-bar> html 切图实训</top-bar>
+
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" circular="{{true}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- tab切换  -->
+
+<van-tabs>
+  <van-tab title="详情">
+     <view class='main'>
+    <view class='text1'>磨具CAD（陈）</view>
+    <view class='text2'>
+      <view class='text2left'>购买人数：222</view>
+      <view class='text2right'>课时数：22</view>
+    </view>
+    <view class='price'>￥4000</view>
+    <view class='text3'>课程有效期：不限天数</view>
+    <view class='text4'>
+      <view><h4>课程介绍</h4></view>
+      <p>磨具CAD</p>
+    </view>
+    <view class='text5'>
+      <view class='text5img'><image src='/images/wang.jpg'></image></view>
+      <view class='text5left'>陈老师</view>
+      <view class='text5center'>开课：44</view>
+      <view class='text5right'>招生：3003</view>
+    </view>
+    <view class='text6'>
+      <view class='text6left'><h4>课程评论</h4></view>
+      <view class='text6right'>查看更多</view>
+    </view>
+  </view>
+  <view class='footernav'>
+    <view class='footernavleft'>收藏</view>
+    <view class='footernavcenter'>评论</view>
+    <view class='footernavright'>
+      <h2>￥4000</h2>
+      <p>购  买</p>
+    </view>
+  
+  </view>
+
+
+
+
+
+  </van-tab>
+  <van-tab title="目录">
+    <van-collapse value="{{ activeNames }}" bind:change="onChange">
+      <van-collapse-item title="第一天课程" name="1">
+        <van-cell-group>
+          <van-cell icon="play-circle-o" title="1.搭建环境" value="00:20:00" />
+          <van-cell icon="play-circle-o" title="2.安装软件" value="00:20:00" border="{{ false }}" />
+        </van-cell-group>
+      </van-collapse-item>
+      <van-collapse-item title="第二天课程" name="2">
+
+      </van-collapse-item>
+      <van-collapse-item title="第三天课程" name="3" disabled>
+
+      </van-collapse-item>
+    </van-collapse>
+  </van-tab>
+</van-tabs>
+
+
+<van-goods-action>
+  <van-goods-action-icon icon="like-o" text="收藏" bind:click="onClickIcon" />
+  <van-goods-action-icon icon="chat-o" text="评论" bind:click="onClickIcon" />
+
+  <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
+
+  <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+</van-goods-action>
