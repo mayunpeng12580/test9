@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			.demo{
+				width: 300px;
+				margin: 50px auto;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="demo">
+		<form class="box">
+			用户名：<input type="text"  class="a" placeholder="请输入admin"/>
+			<br />
+			<br />
+			密码：<input type="password" class="a" placeholder="请输入123"/>
+		</form>
+			<br />
+		
+		<button class="check_in">提交</button>
+		</div>
+		<script type="text/javascript">
+			var user=document.getElementsByClassName("a")[0]
+			var pwd=document.getElementsByClassName("a")[1]
+			var btn=document.querySelector(".check_in")
+			
+			btn.onclick=function(){
+				if (user.value=="admin"&&pwd.value==123) {
+					alert("提交成功")
+				} else{
+					alert("提交失败，请重新填写！！！")
+					
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>
