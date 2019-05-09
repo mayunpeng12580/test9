@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ol>
+			<li>《钢铁是怎样炼成的》</li>
+			<li>《骆驼祥子》</li>
+			<li>《追风筝的人》</li>
+			<li>《活着》</li>
+		</ol>
+		<input type="text" class="addbooksin"/> <button class="addbooks">添加</button>
+		<br />
+		<input type="number" class="delbooksin" min="1"/> <button class="delbooks">删除</button>
+		<br />
+		<input type="text" class="repbooksin"/> <button class="repbooks">替换</button>
+		
+		<input type="number" min="0" /> ：替换书的编号
+
+		<script type="text/javascript">
+			var ol=document.querySelector("ol")
+			var addbooksin=document.querySelector(".addbooksin")
+			var delbooksin=document.querySelector(".delbooksin")
+			var repbooksin=document.querySelector(".repbooksin")
+			var addbooks=document.querySelector(".addbooks")
+			var delbooks=document.querySelector(".delbooks")
+			var repbooks=document.querySelector(".repbooks")
+			
+			
+			addbooks.onclick=function(){
+				if(addbooksin.value==""){
+					alert("书名不能为空！！！");
+
+					return
+				}
+				var newli=document.createElement("li");
+				newli.innerText="《"+addbooksin.value+"》";
+				ol.appendChild(newli);
+				addbooksin.value=""
+					console.log(1)
+				
+			}
+			
+			delbooks.onclick=function(){
+			var ol=document.querySelector("ol")
+				
+				if(delbooksin.value==null||delbooksin.value>ol.childElementCount){
+					alert("未找到指定书籍！！！")
+				}else{
+					ol.removeChild(ol.children[delbooksin.value-1])
+					delbooksin.value=null
+				}
+			}
+			
+			repbooks.onclick=function(){
+				var ol=document.querySelector("ol")
+				var bookName=repbooks.previousElementSibling.value
+				var bookNO=repbooks.nextElementSibling.value
+				
+				if(bookName==""){
+					alert("书名不能为空！！！")
+					
+				}else if(bookNO<0||bookNO>ol.childElementCount){
+					alert("未找到指定书籍！！！")
+				}else{
+					var newli=document.createElement("li");
+					newli.innerText="《"+bookName+"》";
+					bookName="";
+					ol.replaceChild(newli,ol.children[bookNO-1])
+				}
+				
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>
