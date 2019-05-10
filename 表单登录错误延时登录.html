@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box{
+				width: 250px;
+				height: 200px;
+				border: 2px solid red;
+				text-align: center;
+				margin: 50px auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<p>用户登录</p>
+			<div class="text">请填写个人信息</div>
+			<br />
+			<form action="" method="post">
+			用户名：<input type="text" class="user" placeholder="请输入不大于6位的用户名"/>
+			<br />
+			<br />
+			密码：<input type="password" class="pwd"/>
+			<br />
+			<br />
+			<button class="sure">提交</button>
+			</form>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var p=document.querySelector("p")
+			var text=document.querySelector(".text")
+			var user=document.querySelector(".user")
+			var pwd=document.querySelector(".pwd")
+			var sure=document.querySelector(".sure")
+			var form=document.querySelector("form")
+			var index=0;
+			
+			user.onblur=function(){
+				if(user.value.length>6){
+					text.innerText="用户名不符合规定！！！"
+					text.style.color="red"
+				}else{
+					text.innerText="用户名ok！！！"
+					text.style.color="green"
+				}
+			}
+			
+			
+			pwd.onblur=function(){
+				if(pwd.value.length>10||pwd.value.length<6){
+					text.innerText="密码不符合规定！！！"
+					text.style.color="red"
+				}else{
+					text.innerText="密码ok！！！"
+					text.style.color="green"
+				}
+			}
+			
+			form.onsubmit=function(e){
+				console.log(1)
+				e.preventDefault();
+				if(user.value!=pwd.value){
+					text.innerText="请重新确认用户名与密码是否一致！！！"
+					text.style.color="red"
+
+					index++;
+					if(index>=3){
+
+						user.setAttribute("disabled","disabled")
+						pwd.setAttribute("disabled","disabled")
+						sure.setAttribute("disabled","disabled")
+						var t=10;
+						var tt=setInterval(function(){
+							
+						t--;
+						 	
+							text.innerText=t+"秒后重新填写！！！"
+							text.style.color="red"
+
+							if(t<=0){
+						 	text.innerText="请重新填写！！！"
+								
+								index=0;
+								clearInterval(tt);
+								user.removeAttribute("disabled")
+								pwd.removeAttribute("disabled")
+								sure.removeAttribute("disabled")
+							}
+						},1000)
+					}
+				}else{
+				 	text.innerText="提价成功！！！"
+					alert("登陆成功！！！")
+							}
+				
+				
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>
