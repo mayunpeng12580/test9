@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			div{
+				width: 200px;
+				text-align: center;
+				/*border: 1px solid brown;*/
+			}
+			
+			dt{
+				font-size: 24px;
+				line-height: 35px;
+				background-color: #A52A2A;
+				border: 1px solid grey;
+			}
+			
+			dl{
+				width: 100%;
+			}
+			
+			dl dd{
+				font-size: 15px;
+				line-height: 28px;
+				color: #2F4F4F;
+				background-color: burlywood;
+				text-align: left;
+				box-sizing: border-box;
+				padding: 2px 0;
+				
+			}
+			
+			dl dd:before{
+				content: "";
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				background-color: crimson;
+				line-height: 25px;
+				border-radius: 50%;
+				margin:0 10px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--<h3>电 影</h3>-->
+			<dl>
+				<dt>电 影</dt>
+				<dd>肖申克的救赎</dd>
+				<dd>遗愿清单</dd>
+				<dd>阿甘正传</dd>
+				<dd>第九区</dd>
+			</dl>
+			<!--<h3>音 乐</h3>-->
+			<dl>
+				<dt>音 乐</dt>
+				<dd>民族</dd>
+				<dd>流行</dd>
+				<dd>摇滚</dd>
+				<dd>Rep</dd>
+			</dl>
+			<!--<h3>动 漫</h3>-->
+			<dl>
+				<dt>动 漫</dt>
+				<dd>火影忍者</dd>
+				<dd>死神</dd>
+				<dd>海贼王</dd>
+				<dd>进击的巨人</dd>
+			</dl>
+		</div>
+		
+		<script type="text/javascript">
+			$("dl dd").hide()
+			$("dt").css("border-radius","15px")
+			
+			$("dt").click(function(){
+				if($(this).nextAll("dd").is(":visible")){
+					console.log(11)
+					$(this).css("border-radius","15px")
+				}else{
+					console.log(22)
+					$(this).css("border-radius","0")
+				}
+				$(this).nextAll("dd").slideToggle(300)
+				
+			})
+
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
