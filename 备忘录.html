@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="text" class="box" placeholder="请输入要添加的事情"/>
+		<button class="add">添加</button>
+		<ol>
+			<!--<li>7:00起床</li>
+			<li>8:00吃早餐</li>-->
+		</ol>
+		<script type="text/javascript">
+			
+			var box=document.querySelector(".box");
+			var btn=document.querySelector(".add");
+			var ol=document.querySelector("ol");
+			var arr=[];
+			
+			var str=localStorage.getItem("to-do-list");
+			str=str==null?"[]":str;
+			arr=JSON.parse(str);
+			
+			for (var i=0;i<arr.length;i++) {
+				var newli=document.createElement("li");
+					newli.innerText=arr[i].todo;
+					newli.setAttribute("index",i);
+					
+					if(arr[i].finish){
+					newli.style.textDecoration="line-through";
+					}
+				ol.appendChild(newli)
+			}
+			
+			
+			btn.onclick=function(){
+				var str=box.value
+				if (str=="") {
+					alert("内容不能为空！！！")
+				} else{
+					var todo={
+						todo:str,
+						finish:false
+					}
+					arr.push(todo);
+					var str2=JSON.stringify(arr);
+					localStorage.setItem("to-do-list",str2);
+					var newli=document.createElement("li");
+					newli.innerText=str;
+					ol.appendChild(newli);
+					box.value="";
+				}
+			}
+			
+			ol.onclick=function(e){
+//				console.log(e)
+				var target=e.target
+				if(target.nodeName=="LI"){
+					target.style.textDecoration="line-through";
+					var index=target.getAttribute("index");
+					arr[index].finish=true;
+					var str3=JSON.stringify(arr);
+					localStorage.setItem("to-do-list",str3);
+				}
+			}
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
