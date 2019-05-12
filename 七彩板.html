@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.txt{
+				width: 400px;
+				height: 400px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas class="txt" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var txt=document.querySelector(".txt")
+			var ctx=txt.getContext("2d")
+			var tangram=[{p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},
+						{p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#67becf"},
+						{p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#ef3d61"},
+						{p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#f9f51a"},
+						{p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#a54c09"},
+						{p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#fa8ccc"},
+						{p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#f6ca29"}];
+
+			for (var i=0;i<tangram.length;i++) {
+				ctx.beginPath();
+				for (var j=0;j<tangram[i].p.length;j++) {
+					ctx.lineTo(tangram[i].p[j].x,tangram[i].p[j].y)
+					
+				}
+				ctx.stroke()
+				ctx.closePath();
+				
+				ctx.fillStyle=tangram[i].color;
+				ctx.fill();
+
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
