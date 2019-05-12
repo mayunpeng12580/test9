@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function addCookie(key,value,time,path){
+				var key=escape(key);
+				var value=escape(value);
+				var espires=new Date();
+				espires.setTime(espires.getTime()+time*1000);
+				path=path==""?"":";path="+path;
+				var _espires=(typeof time)=="string"?"":";espires="+espires;
+				document.cookie=key+"="+value+_espires+path
+				console.log(key+"="+value+_espires+path)
+			}
+			
+			function getCookie(key){
+				var key=escape(key);
+				var cookies=document.cookie
+				console.log(cookies)
+				
+				var star=cookies.indexOf(key+"=");
+				console.log(star)
+				if(star==-1){
+					return ""
+				}else{
+					star+=(key+"=").length
+				}
+				
+				
+				var end=cookies.indexOf(";",star)
+				if(end==-1){
+					end=cookies.length
+				}
+				
+				return cookies.substring(star,end)	
+				
+			}
+			
+			addCookie("user_name","1",100,"");
+			addCookie("user_id","2",100,"");
+			addCookie("user_age","3",100,"");
+			addCookie("user_sex","4",100,"");
+			
+			console.log(getCookie("user_id"));
+		</script>
+		
+	</body>
+</html>
